@@ -1,4 +1,4 @@
-/*! openui5-generic-app-testing 2018-02-08 */
+/*! openui5-generic-app-testing 2018-03-07 */
 
 (function() {
     var module = {};

@@ -1,4 +1,4 @@
-/*! openui5-generic-app-testing 2018-02-08 */
+/*! openui5-generic-app-testing 2018-03-07 */
 
 (function() {
     var module = {};
@@ -16,6 +16,7 @@
                 id: sWholeNestedExpression ? sParentControlId : sControlId,
                 success: function(oControl) {
                     var sInView = sViewName ? " in " + sViewName + " view" : "";
+                    sTypeOfCheck = (sTypeOfCheck || "equal to").replace(/\s+$/g, "");
                     if (sWholeNestedExpression) {
                         var oSearch = that.utils.findControl(sMaybePosition, sControlType, sWithProperty, sPropertyName, sTypeOfCheck, sValue, sDeeplyOrDirectly, oControl);
                         that.Opa5.assert.ok(!!oSearch.found, sWholeNestedExpression + " " + sWithProperty + " was found" + sInView);
@@ -24,7 +25,7 @@
                     if (sWithProperty) {
                         var oMatch = that.utils.testControlProperty(oControl, sPropertyName, sTypeOfCheck, sValue);
                         var sPossibleFailReason = oMatch.success ? "" : " ERROR: " + oMatch.reason;
-                        that.Opa5.assert.ok(oMatch.success, [ sControlId, "with", sPropertyName, sTypeOfCheck + "'" + sValue + "'", "was found" + sInView + sPossibleFailReason ].join(" "));
+                        that.Opa5.assert.ok(oMatch.success, [ sControlId, "with", sPropertyName, sTypeOfCheck, "'" + sValue + "'", "was found" + sInView + sPossibleFailReason ].join(" "));
                         return;
                     }
                     that.Opa5.assert.ok(true, [ sControlId, "was found" + sInView ].join(" "));
