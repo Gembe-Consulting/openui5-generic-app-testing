@@ -1,4 +1,4 @@
-/*! openui5-generic-app-testing 2018-03-07 */
+/*! openui5-generic-app-testing 2018-12-02 */
 
 sap.ui.define([ "jquery.sap.global", "./steps/index", "./utils", "sap/ui/test/actions/Press", "sap/ui/test/actions/EnterText", "sap/ui/test/matchers/AggregationFilled", "sap/ui/test/matchers/AggregationEmpty", "sap/ui/test/matchers/AggregationLengthEquals" ], function($, aSteps, oUtils, Press, EnterText, AggregationFilled, AggregationEmpty, AggregationLengthEquals) {
     return {
